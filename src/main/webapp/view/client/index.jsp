@@ -128,11 +128,11 @@
 							<ul class="nav nav-tabs aa-products-tab">
 								<li class="active"><a href="#cate1" data-toggle="tab">Chăm
 										sóc da mặt</a></li>
-								<li><a href="#cate2" data-toggle="tab">Trang điểm</a></li>
-								<li><a href="#cate3" data-toggle="tab">Nước hoa </a></li>
-								<li><a href="#cate4" data-toggle="tab">Chăm sóc cơ thể</a></li>
-								<li><a href="#cate5" data-toggle="tab">Dụng cụ làm đẹp</a></li>
-								<li><a href="#cate6" data-toggle="tab">Sản phẩm cho nam</a></li>
+								<li><a href="#cate2" data-toggle="tab">Make Up</a></li>
+								<li><a href="#cate3" data-toggle="tab">Perfume </a></li>
+								<li><a href="#cate4" data-toggle="tab">Body care</a></li>
+								<li><a href="#cate5" data-toggle="tab">Beauty instruments</a></li>
+								<li><a href="#cate6" data-toggle="tab">Products for men</a></li>
 							</ul>
 							<!-- Tab panes -->
 							<div class="tab-content">
