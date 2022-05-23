@@ -13,8 +13,8 @@ public class  AdminLoginDao {
 	public static boolean checkAdminLogin (String username, String password) {
 		boolean exist = false;
 		try {
-			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			String sql = "select * from admin where username=? and password=?";
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String sql = "select * from admins where username=? and password=?";
 			Connection con = connectDB.getConnect();
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, username);
