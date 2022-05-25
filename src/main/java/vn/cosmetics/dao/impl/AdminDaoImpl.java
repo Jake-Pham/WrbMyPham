@@ -15,7 +15,7 @@ public class AdminDaoImpl extends connectDB implements AdminDao {
  
 	@Override 
 	public void insert(Admin admin) { 
-		String sql = "INSERT INTO admin(username,password,name) VALUES (?,?,?)"; 
+		String sql = "INSERT INTO admins(username,password,name) VALUES (?,?,?)"; 
 		new connectDB(); 
 		Connection con = connectDB.getConnect(); 
  
@@ -32,7 +32,7 @@ public class AdminDaoImpl extends connectDB implements AdminDao {
  	
 	@Override 
 	public void delete(String id) { 		
-		String sql = "Delete from admin where id=?";
+		String sql = "Delete from admins where id=?";
 		new connectDB();
 		Connection con = connectDB.getConnect();
 		try {
@@ -47,7 +47,7 @@ public class AdminDaoImpl extends connectDB implements AdminDao {
 	@Override
 	public Admin get(int id) {		
 		Admin admin = new Admin();
-		String sql = "SELECT * FROM admin WHERE id=?";
+		String sql = "SELECT * FROM admins WHERE id=?";
 		new connectDB();
 		Connection con = connectDB.getConnect();
 
@@ -73,7 +73,7 @@ public class AdminDaoImpl extends connectDB implements AdminDao {
 	
 	@Override 
 	public void edit(Admin admin) { 
-	String sql = "Update admin set username =?, password =?, name =? where id=?";
+	String sql = "Update admins set username =?, password =?, name =? where id=?";
 
 		new connectDB();
 		Connection con = connectDB.getConnect();
@@ -98,7 +98,7 @@ public class AdminDaoImpl extends connectDB implements AdminDao {
 	@Override 
 	public List<Admin> getAll() { 
 		List<Admin> admins = new ArrayList<Admin>(); 
-		String sql = "SELECT * FROM admin"; 
+		String sql = "SELECT * FROM admins"; 
 		Connection conn = connectDB.getConnect(); 
  
 		try { 

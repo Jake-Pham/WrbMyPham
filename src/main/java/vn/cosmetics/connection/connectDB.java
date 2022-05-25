@@ -9,16 +9,20 @@ import java.util.List;
 
 
 public class connectDB {
-	public static Connection getConnect() {
+	public connectDB(){
+		super();
+	}
+	public static Connection getConnect(){
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/cosmetics?useSSL=false&useUnicode=true&characterEncoding=UTF-8", "root",
-					"080120");
+					"jdbc:mysql://localhost:3306/cosmetics?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8", "root",
+					"123456789");
 			return conn;
 
 		} catch (Exception e) {
 			System.out.println(e);
+			System.out.println("ket noi khong thanh cong");
 			return null;
 		}
 	}

@@ -1,88 +1,88 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<c:url value = "/view/client/assets" var="url"/>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:url value="/view/client" var="url" />
 
-  <!-- Start header section -->
-  <jsp:include page = "./header/mainHeader.jsp" flush = "true" />
-  <!-- / header section -->
+<!-- Start header section -->
+<jsp:include page="./header/header.jsp" flush="true" />
+<!-- / header section -->
 <!--  content -->
- <!-- catg header banner section -->
-  <section id="aa-catg-head-banner">
-  <img src="${pageContext.request.contextPath}/view/client/assets/images/banner-makeup1.jpg" alt="banner blog">
-    <div class="aa-catg-head-banner-area">
-     <div class="container">
-      <div class="aa-catg-head-banner-content">
-        <h2>Đăng ký</h2>
-        <ol class="breadcrumb">
-          <li><a href="${pageContext.request.contextPath}/">Trang chủ</a></li>                   
-          <li style="color:#fff">Đăng ký tài khoản</li>
-        </ol>
-      </div>
-     </div>
-   </div>
-  </section>
-  <!-- / catg header banner section -->
-
- <!-- Cart view section -->
- <section id="aa-myaccount">
-   <div class="container">
-     <div class="row">
-       <div class="col-md-12">
-        <div class="aa-myaccount-area">         
-            <div class="row">
-       
-              <div class="col-md-8 col-md-push-2">
-                <div class="aa-myaccount-register">                 
-                 <h4>Đăng ký</h4>
-                 <form name="formRegister" class="aa-login-form" method="post" action="${pageContext.request.contextPath}/view/client/register" >
-                    <label for="">Họ tên<span>*</span></label>
-                    <input type="text" placeholder="Name" name="name" required>   
+<section class="bg0 p-t-104 p-b-116">
+	<div class="container">
+		<div class="flex-c-m ">
+			<div
+				class="size-208 bor10 p-lr-20 p-t-20 p-b-20 p-lr-10-lg w-full-md">
+				
+				<form name="formRegister"  method="post" action="${pageContext.request.contextPath}/view/client/register">
+					<h4 class="mtext-105 cl2 txt-center p-b-30">SIGN UP</h4>
+					
+                    <label for="">Full name<span>*</span></label>
+                    <div class="bor8 m-b-20 how-pos4-parent">
+						<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
+							type="text"  name="name" required>
+					</div>
+                    
                      <label for="">Email <span>*</span></label>
-                    <input type="text" placeholder="useremail@gmail.com" name="email" required>
-                    <label for="">Số điện thoại<span>*</span></label>
-                    <input type="text" placeholder="Số điện thoại" name="phone" required>   
-                     <label for="">Tên đăng nhập<span>*</span></label>
-                    <input type="text" placeholder="Username" name="username" required>
-                    <label for="">Mật khẩu<span>*</span></label>  
-                    <input type="password" placeholder="Password" name="password" required>     
+                     <div class="bor8 m-b-20 how-pos4-parent">
+						<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
+							type="text" placeholder="useremail@gmail.com" name="email" required>
+					</div>
+                    
+                    <label for="">Phone number<span>*</span></label>
+                    <div class="bor8 m-b-20 how-pos4-parent">
+						<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
+							type="text"  name="phone">
+					</div>
+                    
+                     <label for="">Username<span>*</span></label>
+                     <div class="bor8 m-b-20 how-pos4-parent">
+						<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
+							type="text" placeholder="Username" name="username" required>
+					</div>
+                  
+                    <label for="">Password<span>*</span></label> 
+                    <div class="bor8 m-b-20 how-pos4-parent">
+						<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
+							type="password" placeholder="Password" name="password" required>
+					</div> 
+                      
                     <input type="date" style="display: none" placeholder="Password" name="created" id="the-date">             
                       
                     <p style="color:red; display: block;"><%=(request.getAttribute("errMessage") == null) ? ""
         			: request.getAttribute("errMessage")%></p>
 			        <p style="color:red; display: block;"><%=(request.getAttribute("Message") == null) ? ""
 			        : request.getAttribute("Message")%></p>      
-			         <button type="reset" class="aa-browse-btn" value="Reset">Đặt lại</button>  
-                      <button type="submit" class="aa-browse-btn">Đăng ký</button>                         
+			        
+                      <button type="submit" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">Register</button>                         
                   </form>
-                </div>
-              </div>
-            </div>          
-         </div>
-       </div>
-     </div>
-   </div>
- </section>
- <!-- / Cart view section -->
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
 
 <!--  end content-->
-   <script>
-		var date = new Date();
-		
-		var day = date.getDate();
-		var month = date.getMonth() + 1;
-		var year = date.getFullYear();
-		
-		if (month < 10) month = "0" + month;
-		if (day < 10) day = "0" + day;
-		
-		var today = year + "-" + month + "-" + day;
-		
-		
-		document.getElementById('the-date').value = today;
+<script>
+	var date = new Date();
+
+	var day = date.getDate();
+	var month = date.getMonth() + 1;
+	var year = date.getFullYear();
+
+	if (month < 10)
+		month = "0" + month;
+	if (day < 10)
+		day = "0" + day;
+
+	var today = year + "-" + month + "-" + day;
+
+	document.getElementById('the-date').value = today;
 </script>
 <!--  footer-->
- <jsp:include page = "./footer/footer.jsp" flush = "true" />
+<jsp:include page="./footer/footer.jsp" flush="true" />
 <!-- end footer-->
-  
-  
+
+

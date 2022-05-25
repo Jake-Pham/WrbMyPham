@@ -34,32 +34,22 @@ public class ProductListOfCategoryClientController extends HttpServlet {
 		List<Catalog> cateList = cateService.getAll();
 		req.setAttribute("catelist", cateList);
 		String id = req.getParameter("id");
-		
-		List<Product> productList = productService.getProductById(Integer.parseInt(id));
-		req.setAttribute("productlist", productList);		
-		//Giá giảm
-		List<Product> productsList1 = new ArrayList<Product>();
-		for(Product product: productList)
-		{
-			Product product1 = productService.get(Integer.parseInt(product.getId()));
-			product1.setPrice(String.valueOf(df.format(Double.parseDouble(product.getPrice()) * (1 - (Double.parseDouble(product.getDiscount())/100)))));
-			productsList1.add(product1);
-			
-		}
-
-		req.setAttribute("productlist1", productsList1);
+		/*
+		 * List<Product> productList =
+		 * productService.getProductById(Integer.parseInt(id));
+		 * req.setAttribute("productlist", productList); //Giá giảm List<Product>
+		 * productsList1 = new ArrayList<Product>(); for(Product product: productList) {
+		 * Product product1 = productService.get(Integer.parseInt(product.getId()));
+		 * product1.setPrice(String.valueOf(df.format(Double.parseDouble(product.
+		 * getPrice()) * (1 - (Double.parseDouble(product.getDiscount())/100)))));
+		 * productsList1.add(product1);
+		 * 
+		 * }
+		 * 
+		 * req.setAttribute("productlist1", productsList1);
+		 */
 		req.setAttribute("tagactive", id);
-		List<Product> banchay = productService.getProductSelling();
-
-		req.setAttribute("sanphambanchay", banchay);
 		
-		List<Product> sanphammoi = productService.getProductNew();
-
-		req.setAttribute("sanphammoi",sanphammoi);
-		
-		List<Product> sanphamgiamgia = productService.getProductDiscount();
-
-		req.setAttribute("sanphamgiamgia", sanphamgiamgia);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/client/product.jsp");
 		dispatcher.forward(req, resp);
 	}

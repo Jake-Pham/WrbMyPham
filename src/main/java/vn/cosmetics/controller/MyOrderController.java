@@ -29,13 +29,14 @@ public class MyOrderController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String usersession ="";
+		String usersession =" ";
 		HttpSession session = request.getSession();
 		if( session == null) {
 			usersession = "";
 		}
 		else {
-			usersession= session.getAttribute("username").toString();
+			/* usersession= session.getAttribute("username").toString(); */
+			usersession=  session.getAttribute("username").toString();
 		}
 		
 		List<Transactions> transactions = transactionService.getAllbyUser(usersession);
@@ -71,5 +72,7 @@ public class MyOrderController extends HttpServlet {
 		System.out.println(transactions);
 	
 	}
+	
+	
 
 }
